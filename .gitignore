@@ -1,2 +1,5 @@
 .DS_Store
 node_modules
+.idea
+package-lock.json
+rollup-plugin-import-assets.iml
