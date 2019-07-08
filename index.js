@@ -47,7 +47,7 @@ module.exports = function svelte(options = {}) {
 			if (pluginOptions.emitAssets) {
 				assets[id] = {fileName, source};
 			}
-			return `export default '${pluginOptions.publicPath}${fileName}'`;
+			return `export default '${path.join(pluginOptions.publicPath, fileName)}'`;
 		},
 
 		generateBundle(options, bundle) {
