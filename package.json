@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-import-assets",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Rollup plugin to import assets",
   "main": "index.js",
   "files": [
@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/domingues/rollup-plugin-import-assets",
   "dependencies": {
-    "rollup-pluginutils": "^2.7.1"
+    "rollup-pluginutils": "^2.7.1",
+    "url-join": "^4.0.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0"

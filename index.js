@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const urljoin = require('url-join');
 const crypto = require('crypto');
 const {createFilter} = require('rollup-pluginutils');
 
@@ -47,7 +48,7 @@ module.exports = function svelte(options = {}) {
 			if (pluginOptions.emitAssets) {
 				assets[id] = {fileName, source};
 			}
-			return `export default '${path.join(pluginOptions.publicPath, fileName)}'`;
+			return `export default '${urljoin(pluginOptions.publicPath, fileName)}'`;
 		},
 
 		generateBundle(options, bundle) {
