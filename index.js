@@ -54,19 +54,14 @@ module.exports = function svelte(options = {}) {
 		generateBundle(options, bundle) {
 			if (!pluginOptions.emitAssets) return;
 
-			const bundleAsset = (dest, data) => {
-				bundle[dest] = {
-					fileName: dest,
-					isAsset: true,
-					source: data
-				};
-			};
-
 			for (const chunk of Object.values(bundle)) {
-				if (chunk.isAsset === true) continue;
-
+				if (chunk.type === 'asset') continue;
 				for (const f of Object.keys(chunk.modules).filter(filter)) {
-					bundleAsset(assets[f].fileName, assets[f].source);
+					this.emitFile({
+						type: 'asset',
+						fileName: assets[f].fileName,
+						source: assets[f].source
+					});
 					chunk.imports.push(assets[f].fileName);
 				}
 			}

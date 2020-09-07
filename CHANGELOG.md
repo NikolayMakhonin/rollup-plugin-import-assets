@@ -1,5 +1,8 @@
 # rollup-plugin-import-assets changelog
 
+## 1.1.1 (07/09/2020)
+* Fix Rollup 2 deprecation warning.
+
 ## 1.1.0 (02/08/2019)
 
 * Allow full url in public path.
