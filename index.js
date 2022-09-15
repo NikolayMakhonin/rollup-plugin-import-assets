@@ -5,9 +5,7 @@ const crypto = require('crypto');
 const {createFilter} = require('rollup-pluginutils');
 
 function hash(content) {
-	return crypto.createHmac('sha256', content)
-		.digest('hex')
-		.substr(0, 8);
+	return crypto.createHash('md5').update(data).digest('hex');
 }
 
 function makeFileName(name, hash, ext, pattern) {
